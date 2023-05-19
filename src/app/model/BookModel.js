@@ -4,16 +4,35 @@ class BookModel {
 
     //criar novo elemento na tabela
     create(title, pageqty) {
-        const queryAdd = `INSERT INTO books (title, pageqty) VALUES ('${title}', '${pageqty}')`;
+        
+        const SQL = `SELECT COUNT(*) AS count FROM books WHERE title = ?`; //selecionando todos os itens da tabela books
         return new Promise((resolve, reject) => {
-            pool.query(queryAdd, function (error) {
+            pool.query(SQL, [title], function (error, results) {
                 if (error) {
-                    console.log(`Erro ao inserir dados. Error: ${error}`);
+                    console.log(`Error ao verificar item do banco. erro: ${error}`);
                     return;
+                } 
+                const count = results[0].count;
+                if(count > 0) {
+                    return resolve('true');
+                } else {
+                    const queryAdd = `INSERT INTO books (title, pageqty) VALUES ('${title}', '${pageqty}')`;
+
+                    pool.query(queryAdd, function (error, result) {
+                        if (error) {
+                            console.log(`Erro ao inserir dados. Error: ${error}`);
+                            return;
+                        };
+        
+                        if (console.log(result));
+                        return resolve(true);
+                    });
                 };
-                return resolve(true);
             });
         });
+        
+
+            
     };
 
 
@@ -48,7 +67,6 @@ class BookModel {
                             return;
                         } else {
                             const books = results;
-                            console.log(books);
                             return resolve(books);
                         };
                     });

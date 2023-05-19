@@ -36,7 +36,12 @@ class BookController {
         const title = req.body.title;
         const pageqty = req.body.pageqty;
         const resposta = await BookModel.create(title,pageqty);
-        res.redirect('/books');
+        if(resposta == 'true') {
+            const recado = true;
+            res.render('cadastro', { recado });
+        } else {
+            res.redirect('/disponiveis');
+        };
     };
     
 
