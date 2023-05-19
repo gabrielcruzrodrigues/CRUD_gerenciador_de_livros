@@ -24,9 +24,11 @@
     font-size: 25px;
 }
   
-.post p {
+.post p {background-color: #141414;
     font-weight: bold;
-    color: #141414;
+    color: white;
+    padding: 5px;
+    border-radius: 15px;
 }
   
 /* title */

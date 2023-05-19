@@ -12,6 +12,7 @@ html, body {
 }
 
 footer {
+    display: block;
     position: fixed;
     bottom: 0;
     width: 100%;

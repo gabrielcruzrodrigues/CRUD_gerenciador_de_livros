@@ -93,8 +93,14 @@ h1, h3 {
 
 
 .books-container {
-    width: 450px;
-    margin: 100px auto;
+    width: 80%;
+    margin: auto;
+    height: 600px;
+    background-color: white;
+}
+
+.books-container h1 {
+    padding: 10px;
 }
 
 .form-control {

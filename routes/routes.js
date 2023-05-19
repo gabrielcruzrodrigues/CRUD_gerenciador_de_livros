@@ -2,7 +2,12 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../db/User.js');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+    res.render('home');
+});
+
+
+router.get('/disponiveis', (req, res) => {
     const sql = `SELECT COUNT(*) as total FROM books`; //verifica o total de itens no db
 
     pool.query(sql, function(error, results) {
@@ -23,7 +28,7 @@ router.get('/', (req, res) => {
 
             const books = suporteError;
             console.log(books);
-            return res.render('home', { books });
+            return res.render('disponiveis', { books });
         } else {
             const SQL = `SELECT * FROM books`; //selecionando todos os itens da tabela books
 
@@ -34,7 +39,7 @@ router.get('/', (req, res) => {
                 } else {
                     const books = results;
                     console.log(books);
-                    res.render('home', { books });
+                    res.render('disponiveis', { books });
                 };
             });
         }; 
