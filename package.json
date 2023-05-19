@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "<h1>Olá programador!! Bem vindo meu projeto: \"Gerenciador de livros com banco de dados\"! </h1>",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./index.js localhost 3000"

@@ -1,6 +1,6 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const routes = require('./routes/routes.js');
+import express from 'express';
+import exphbs from 'express-handlebars';
+import routes from './routes/routes.mjs';
 const port = 3000;
 
 //chmando a função express()
