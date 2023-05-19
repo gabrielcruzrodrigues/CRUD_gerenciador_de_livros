@@ -1,0 +1,43 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 30px;
+}
+  
+.post {
+    margin-top: 15px;
+    color: #141414;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+    max-width: 100%;
+}
+  
+.post h3 {
+    margin-top: 10px;
+    color: #141414;
+    font-size: 25px;
+}
+  
+.post p {
+    font-weight: bold;
+    color: #141414;
+}
+  
+/* title */
+.title_main {
+    background-color: #e73d0c;
+    padding: 1px;
+    text-align: center;
+    margin: 20px auto;
+    width: 90%;
+    border: 5px solid white;
+    border-radius: 15px;
+    
+}
+
