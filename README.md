@@ -9,7 +9,7 @@ Não se esqueça de dar um "npm install" para baixar os node modules necessarios
 
 ## Passos para executar localmente
 1. Tenha o Node.js instalado na sua maquina.
-2. Tenha o mysql instalado na sua maquina (usuário: 'root@localhost', password: ' ').
+2. Tenha o mysql instalado na sua maquina (usuário: 'root', password: ' ').
 3. Tenha o banco de dados "crudLivros" criado.
 4. Clone este repositório.
 5. Abra o terminal na raiz do seu projeto.
