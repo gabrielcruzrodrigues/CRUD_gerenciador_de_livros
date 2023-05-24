@@ -9,9 +9,12 @@ Não se esqueça de dar um "npm install" para baixar os node modules necessarios
 
 ## Passos para executar localmente
 1. Tenha o Node.js instalado na sua maquina.
-2. Clone este repositório.
-3. abra o terminal na raiz do seu projeto.
-4. digite o comando `npm install`
-5. digite o comando `npm start`
+2. Tenha o mysql instalado na sua maquina (usuário: 'root@localhost', password: '').
+3. Tenha o banco de dados "crudLivros" criado.
+4. Clone este repositório.
+5. Abra o terminal na raiz do seu projeto.
+6. Abra o terminal.
+7. Digite o comando `npm install`
+8. Digite o comando `npm start`
 
 ### Agora você ja pode utilizar o CRUD_Gerenciador de livros.
