@@ -3,6 +3,11 @@ import BookModel from '../model/BookModel.js';
 
 class BookController {
 
+    async database(req, res) {
+        const database = await BookModel.databaseCreate();
+        res.render('home');
+    }
+
     // listar tudo
     async index(req, res) {
         const books = await BookModel.findAll();

@@ -2,6 +2,26 @@ import pool from '../db/User.js';
 
 class BookModel {
 
+    // criar banco de dados
+    databaseCreate() {
+        const SQL1 = `CREATE TABLE books (
+            id INT(11) NOT NULL AUTO_INCREMENT,
+            title VARCHAR(50) NOT NULL,
+            pageqty INT(11) DEFAULT NULL,
+            PRIMARY KEY(id)
+            )`;
+
+        return new Promise((resolve, reject) => {
+            pool.query(SQL1, (error) => {
+                if (error) {
+                    console.log(`Erro ao verificar / criar a tabela: ${error}`);
+                };
+
+                return resolve(true);
+            });
+        });
+    };
+
     //criar novo elemento na tabela
     create(title, pageqty) {
         
@@ -30,9 +50,6 @@ class BookModel {
                 };
             });
         });
-        
-
-            
     };
 
 

@@ -2,14 +2,12 @@ import express from 'express';
 const router = express.Router();
 import BookController from '../src/app/controllers/BookController.js';
 
-router.get('/', async (req, res) => {
-    res.render('home');
-});
 
 router.get('/cadastro', (req, res) => {
     res.render('cadastro');
 });
 
+router.get('/', BookController.database);
 router.get('/disponiveis', BookController.index); //resgatando todos os os valores 
 router.get('/books/:id', BookController.show); //resgatando livro específico
 router.get('/books', BookController.indexEdit); //resgatando os dados do banco para listar e editar
