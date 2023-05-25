@@ -1,0 +1,12 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="books-container">
+    <h1>Livros Disponíveis</h1>
+    <% books.forEach(function(books){%>
+        <div>
+            📚 <a href='/books/<%= books.id %>' class="link-books"><span class="bold"><%= books.title %></span></a> - <%= books.pageqty %> páginas
+        </div>
+    <% }) %>
+</div>
+
+<%- include("partials/footer.ejs"); %>

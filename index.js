@@ -1,5 +1,5 @@
 import express from 'express';
-import exphbs from 'express-handlebars';
+// import exphbs from 'express-handlebars';
 import routes from './routes/routes.mjs';
 const port = 3000;
 
@@ -14,8 +14,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 //definindo o handlebars como template engine
-app.engine('handlebars', exphbs.engine());
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', exphbs.engine());
+
+// definindo ejs como template engine
+app.set('view engine', 'ejs');
 
 //rotas
 app.use('/',routes);

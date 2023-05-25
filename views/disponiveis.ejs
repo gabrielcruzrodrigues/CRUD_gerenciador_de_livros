@@ -1,0 +1,13 @@
+<%- include("partials/header.ejs"); %>
+
+<div class="gallery">
+    <% books.forEach(function(books){ %>
+        <div class="post">
+            <h3>📚<%= books.title %></h3>
+            <p><%= books.pageqty %> páginas</p>
+        </div>
+    <% }); %>
+  <!-- Adicione mais posts aqui -->
+</div>
+
+<%- include("partials/footer.ejs"); %>
