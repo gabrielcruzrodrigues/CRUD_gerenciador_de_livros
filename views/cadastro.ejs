@@ -1,6 +1,7 @@
 <%- include("partials/header.ejs"); %>
 
 
+
 <form action="/books/insertbook" method="POST" class="form">
     <h1 class="main-title">Cadastre o seu livro</h1>
 
@@ -17,8 +18,11 @@
     <input type="submit" value="Cadastrar" class="btn">
 </form>
 
-<% if (recado) {%>
-    <p class="recado_p">O livro ja existe no banco de dados, confira os livros ja cadastrados em "Livros disponíveis"</p>
-<% } %>
+<% if (recado) { %>
+    <h3 class="recado_p">Exitem campos em branco</h3>
+<%} %>
+
+<% recado = '' %>
+
 
 <%- include("partials/footer.ejs"); %>

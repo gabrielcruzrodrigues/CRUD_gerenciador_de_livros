@@ -24,34 +24,19 @@ class BookModel {
 
     //criar novo elemento na tabela
     create(title, pageqty) {
-        
-        const SQL = `SELECT COUNT(*) AS count FROM books WHERE title = ?`; //selecionando todos os itens da tabela books
+        const queryAdd = `INSERT INTO books (title, pageqty) VALUES ('${title}', '${pageqty}')`;
         return new Promise((resolve, reject) => {
-            pool.query(SQL, [title], function (error, results) {
+            pool.query(queryAdd, function (error, result) {
                 if (error) {
-                    console.log(`Error ao verificar item do banco. erro: ${error}`);
+                    console.log(`Erro ao inserir dados. Error: ${error}`);
                     return;
-                } 
-                const count = results[0].count;
-                if(count > 0) {
-                    return resolve('true');
-                } else {
-                    const queryAdd = `INSERT INTO books (title, pageqty) VALUES ('${title}', '${pageqty}')`;
-
-                    pool.query(queryAdd, function (error, result) {
-                        if (error) {
-                            console.log(`Erro ao inserir dados. Error: ${error}`);
-                            return;
-                        };
-        
-                        if (console.log(result));
-                        return resolve(true);
-                    });
                 };
+    
+                if (console.log(result));
+                return resolve(true);
             });
-        });
+        })
     };
-
 
     //selecionar tudo
     findAll() {

@@ -19,12 +19,12 @@ class BookController {
         const books = await BookModel.findAllEdit();
         res.render('books', { books });
     };
-    
+
 
     //listar tudo por id
     async show(req, res) {
         const id = req.params.id;
-        const book = await BookModel.findById(id); 
+        const book = await BookModel.findById(id);
         res.render('book', { book });
     };
 
@@ -40,15 +40,26 @@ class BookController {
     async store(req, res) {
         const title = req.body.title;
         const pageqty = req.body.pageqty;
-        const resposta = await BookModel.create(title,pageqty);
-        if(resposta == 'true') {
+
+        
+
+        if (title == '' || pageqty == '') {
+            console.log('Existem campos em branco!');
+
             const recado = true;
-            res.render('cadastro', { recado });
-        } else {
+            
+            return res.render('cadastro', { recado });
+        };
+
+        try {
+            const resposta = await BookModel.create(title, pageqty);
             res.redirect('/disponiveis');
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('Ocorreu um erro ao criar o livro');
         };
     };
-    
+
 
     //atualizar dados (página editar)
     async update(req, res) {
@@ -58,7 +69,7 @@ class BookController {
         const resposta = await BookModel.update(id, title, pageqty);
         res.redirect('/books');
     };
-    
+
 
     //deletar dados (página iniciar)
     async delete(req, res) {
