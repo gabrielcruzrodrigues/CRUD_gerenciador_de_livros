@@ -20,9 +20,10 @@
 
 <% if (recado) { %>
     <h3 class="recado_p">Exitem campos em branco</h3>
-<%} %>
+<%} else { %>
+    <% recado = '' %>
+<%}%>
 
-<% recado = '' %>
 
 
 <%- include("partials/footer.ejs"); %>

@@ -42,15 +42,14 @@ class BookController {
         const pageqty = req.body.pageqty;
 
         
-
         if (title == '' || pageqty == '') {
             console.log('Existem campos em branco!');
 
             const recado = true;
             
             return res.render('cadastro', { recado });
-        };
-
+        } 
+        
         try {
             const resposta = await BookModel.create(title, pageqty);
             res.redirect('/disponiveis');
