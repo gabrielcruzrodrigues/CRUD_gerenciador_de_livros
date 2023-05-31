@@ -42,21 +42,19 @@ class BookController {
         const pageqty = req.body.pageqty;
 
         
-        if (title == '' || pageqty == '') {
+        if (title == '' || pageqty == '') { 
             console.log('Existem campos em branco!');
 
-            const recado = true;
-            
-            return res.render('cadastro', { recado });
-        } 
-        
-        try {
+            const recado = [
+                {recadoCampoBranco: 'Existem campos em branco', teste: 'teste'}
+            ];
+            console.log(recado)
+            res.render('cadastro', { recados: recado });
+        } else {
             const resposta = await BookModel.create(title, pageqty);
+            console.log(`Livro criado`);
             res.redirect('/disponiveis');
-        } catch (error) {
-            console.error(error);
-            res.status(500).send('Ocorreu um erro ao criar o livro');
-        };
+        }
     };
 
 

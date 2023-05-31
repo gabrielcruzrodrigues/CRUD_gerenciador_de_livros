@@ -1,7 +1,7 @@
 import express from 'express';
 // import exphbs from 'express-handlebars';
 import routes from './routes/routes.mjs';
-const port = 3000;
+const port = 3001;
 
 //chmando a função express()
 const app = express();

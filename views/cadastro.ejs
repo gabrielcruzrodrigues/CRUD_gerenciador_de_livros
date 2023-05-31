@@ -18,12 +18,10 @@
     <input type="submit" value="Cadastrar" class="btn">
 </form>
 
-<% if (recado) { %>
-    <h3 class="recado_p">Exitem campos em branco</h3>
-<%} else { %>
-    <% recado = '' %>
-<%}%>
-
-
+<% if (recados) { %>
+    <% recados.forEach(function(recado) { %>
+        <h2 class="recado_p"><%= recado.recadoCampoBranco %></h2>
+    <% }) %>
+<% } %>
 
 <%- include("partials/footer.ejs"); %>
