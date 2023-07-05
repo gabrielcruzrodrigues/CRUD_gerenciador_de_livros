@@ -7,7 +7,7 @@ O banco de dados do projeto já esta totalmente configurado para facilitar todo 
 Você deve importar o arquivo .sql no seu servidor, usar o workbanch é uma boa para ajudar na importação, depois disso, o programa ja estará pronto para ser executado.
 Não se esqueça de dar um "npm install" para baixar os node modules necessarios para que o programa funcione!!
 
-## Passos para executar localmente
+## Passos para executar localmente 
 1. Tenha o Node.js instalado na sua maquina.
 2. Tenha o mysql instalado na sua maquina (usuário: 'root', password: ' ').
 3. Tenha o banco de dados "crudLivros" criado.
